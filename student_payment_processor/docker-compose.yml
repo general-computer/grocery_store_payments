@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  backend:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - DATABASE_URL=postgresql://postgres:password@db:5432/student_payments
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
+      - SENDGRID_API_KEY=${SENDGRID_API_KEY}
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=student_payments
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
