@@ -1,0 +1,7 @@
+"Payment Processor for Students"
+
+We are trying to build a payment form process.
+Our target audience: Students, international students, people who need to send remittances, etc. 
+  
+Tech stack/Technologies of choice: Python & PowerApp 
+We want to create a form to fill out, and when a payment is completed successfully, the receipts are sent via email for payouts. 
